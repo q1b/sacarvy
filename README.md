@@ -1,8 +1,8 @@
 <div>
-  <a href="https://peadevp.com" target="_blank">
+  <a href="https://peadevp.com/#gh-light-mode-only" target="_blank">
     <img src="./.github/logo-light.svg" alt="Alphacat To The Space" width="350" height="70">
   </a>
-  <a href="https://peadevp.com" target="_blank">
+  <a href="https://peadevp.com/#gh-dark-mode-only" target="_blank">
     <img src="./.github/logo-dark.svg" alt="Alphacat To The Space" width="350" height="70">
   </a>
 </div>
