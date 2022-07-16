@@ -42,7 +42,10 @@ function myRemarkPlugin() {
 			}
 		})
 	}
-} // This plugin is an example to turn `::youtube` into iframes.
+}
+
+// This plugin is an example to turn `::youtube` into iframes.
+// <!-- ::youtube[Video of a cat in a box]{#01ab2cd3efg} -->
 
 /** @type {import('unified').Plugin<[], import('mdast').Root>} */
 
@@ -77,6 +80,8 @@ function youtubeRemarkPlugin() {
 		})
 	}
 } // This plugin is an example to turn `::youtube` into iframes.
+
+// <!-- ::github[Link to github]{#remarkjs/remark-directive} -->
 
 /** @type {import('unified').Plugin<[], import('mdast').Root>} */
 
