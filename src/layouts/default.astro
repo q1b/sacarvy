@@ -2,27 +2,28 @@
 import SEO from "@/ui/SEO.astro"
 import { Navbar } from "@/ui/navbar"
 export interface Props {
-        title: string;
-        description: string;
-        image?: string;
+	title: string
+	description: string
+	image?: string
 }
 
-const { title, description, image } = Astro.props as Props;
+const { title, description, image } = Astro.props as Props
 ---
-<html lang="en" class="scroll-smooth">
+
+<html lang="en">
 	<head>
-        <SEO title={title} description={description} image={image} />
+		<SEO title={title} description={description} image={image} />
 	</head>
 
 	<body
 		class="w-full min-h-screen flex flex-col items-center dark:bg-slate-900 bg-grid-slate-200 dark:bg-grid-slate-800"
 	>
 		<section
-			class="w-full min-h-screen bg-gradient-to-t px-20 from-white/80 via-white/50 to-white/10 dark:from-slate-900/80 dark:via-slate-900/50 dark:to-slate-500/10 flex flex-col items-center"
+			class="w-full min-h-screen bg-gradient-to-t from-white/80 via-white/50 to-white/10 dark:from-slate-900/80 dark:via-slate-900/50 dark:to-slate-500/10 flex flex-col items-center"
 		>
 			<!-- 64rem 1024px 5xl -->
 			<Navbar client:idle />
-            <slot />
-        </section>
-    </body>
+			<slot></slot>
+		</section>
+	</body>
 </html>

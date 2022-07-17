@@ -7,11 +7,8 @@ import sitemap from "@astrojs/sitemap"
 import remarkGfm from "remark-gfm"
 import remarkBreaks from "remark-breaks"
 import remarkDirective from "remark-directive"
-
 import { visit } from "unist-util-visit"
-import { h } from "hastscript"
-
-// https://github.com/timlrx/rehype-prism-plus
+import { h } from "hastscript" // https://github.com/timlrx/rehype-prism-plus
 
 function withLinkRoles() {
 	return (tree) => {
@@ -42,9 +39,7 @@ function myRemarkPlugin() {
 			}
 		})
 	}
-}
-
-// This plugin is an example to turn `::youtube` into iframes.
+} // This plugin is an example to turn `::youtube` into iframes.
 // <!-- ::youtube[Video of a cat in a box]{#01ab2cd3efg} -->
 
 /** @type {import('unified').Plugin<[], import('mdast').Root>} */
@@ -80,7 +75,6 @@ function youtubeRemarkPlugin() {
 		})
 	}
 } // This plugin is an example to turn `::youtube` into iframes.
-
 // <!-- ::github[Link to github]{#remarkjs/remark-directive} -->
 
 /** @type {import('unified').Plugin<[], import('mdast').Root>} */
@@ -113,9 +107,13 @@ function githubRemarkPlugin() {
 
 // https://astro.build/config
 export default defineConfig({
+	site: "https://peadevp.com/",
 	integrations: [solid(), tailwind(), sitemap()],
-
 	vite: {
+		ssr: {
+			noExternal: ["smartypants"],
+			// external: ["svgo", "@11ty/eleventy-img"],
+		},
 		plugins: [
 			Icons({
 				compiler: "solid",
@@ -124,8 +122,7 @@ export default defineConfig({
 	},
 	markdown: {
 		shikiConfig: {
-			theme: "css-variables",
-			// wrap: true,
+			theme: "css-variables", // wrap: true,
 		},
 		rehypePlugins: [
 			"rehype-slug",
