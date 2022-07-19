@@ -33,6 +33,7 @@
     "hastscript": "^7.0.2",
     "howler": "^2.2.3",
     "mini-svg-data-uri": "^1.4.4",
+    "reading-time": "^2.0.0-1",
     "rehype-autolink-headings": "^6.1.1",
     "rehype-parse": "^8.0.4",
     "rehype-slug": "^5.0.1",

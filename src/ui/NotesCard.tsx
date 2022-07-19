@@ -7,11 +7,18 @@ import { throttle } from "@solid-primitives/scheduled"
 import { createEffect, createUniqueId } from "solid-js"
 import { ease5, easeElastic2, easeSquish5 } from "./utils/easing"
 
+export interface Stats {
+	minutes: number
+	time: number
+	words: { total: number }
+}
+
 export interface Props {
 	url: string
 	title: string
 	description: string
 	publishedOn: string
+	stats: Stats
 }
 
 // const { title, description, publishedOn, url } = Astro.props as Props

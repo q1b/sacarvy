@@ -11,6 +11,7 @@ import {
 	Show,
 } from "solid-js"
 import { setTheme, theme } from "../theme"
+import { blue_scrollbar_class } from "../utils/scrollbar_"
 
 const softBtnClass =
 	"group bg-white dark:bg-slate-900 text-cyan-600 dark:text-white tab-highlight-none inline-flex items-center justify-center rounded-sm"
@@ -126,7 +127,7 @@ export function TOC(props: { headers: Omit<HEntry, "children">[] }) {
 		>
 			<div
 				ref={(el: HTMLElement) => (scrollRef = el)}
-				class="overflow-auto w-full max-w-xs bg-slate-100/40 dark:bg-slate-900/40 backdrop-blur-md backdrop-saturate-150 rounded-md scrollbar:w-2 scrollbar:bg-transparent scrollbar-track:bg-blue-100 dark:scrollbar-track:bg-slate-300 scrollbar-track:rounded-xl scrollbar-thumb:bg-clip-content scrollbar-thumb:bg-slate-700 dark:scrollbar-thumb:bg-slate-600 scrollbar-thumb:rounded-xl scrollbar-thumb:border-2"
+				class={`overflow-auto w-full max-w-xs bg-slate-100/40 dark:bg-slate-900/40 backdrop-blur-md backdrop-saturate-150 rounded-md ${blue_scrollbar_class}`}
 				classList={{
 					"h-[calc(100vh-112px)] min-w-[180px] bottom-1 px-2":
 						expansion() === State.Expanded,

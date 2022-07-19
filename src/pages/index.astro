@@ -5,16 +5,31 @@ import Layout from "@/layouts/default.astro"
 import WritingCard from "@/ui/WritingsCard.astro"
 import NotesCard from "@/ui/NotesCard"
 import { ProfileIcon, PenIcon, BoardIcon, NotebookIcon } from "@/assets/icons"
+import readtime from "reading-time"
+import Position from "@/ui/layout/Position.astro"
 const writings = await Astro.glob("./writings/*.md")
 const notes = await Astro.glob("./notes/*.md")
-
-const htmlContent = await notes[0].compiledContent()
+// ->
+// stats: {
+//   minutes: 1,
+//   time: 60000,
+//   words: {total: 200}
+// }
+// console.log(`The reading time is: ${JSON.stringify(stats, null, 2)} min`)
 ---
 
 <Layout
 	title="Sukhpreet Singh | Front-end Engineer"
 	description="Life on Internet"
 >
+	<Position col apart center stretchX stretchY
+		class="px-4 global-max-width max-w-4xl w-full gap-4 min-h-[416px] mb-10"
+	>
+		<h1 class="text-white bg-rose-500 text-xl">Hello Universer</h1>
+		<h1 class="text-white bg-teal-500 text-xl">Hello Universer</h1>
+		<h1 class="text-white bg-cyan-500 text-xl">Hello Universer</h1>
+		<h1 class="text-white bg-blue-500 text-xl">Hello Universer</h1>
+	</Position>
 	<main
 		class="px-4 global-max-width max-w-4xl w-full flex flex-col items-start justify-center gap-4 min-h-[216px] mb-10"
 	>
@@ -26,15 +41,20 @@ const htmlContent = await notes[0].compiledContent()
 		>
 			Notes
 		</h1>
-		{notes.map((writing) => (
-			<NotesCard
-				title={writing.frontmatter.title}
-				description={writing.frontmatter.description}
-				publishedOn={writing.frontmatter.publishedOn}
-				url={writing.url}
-                client:idle
-			/>
-		))}
+		{notes.map((writing) => {
+			const rawContent = writing.rawContent()
+			const stats = readtime(rawContent)
+			return (
+				<NotesCard
+					title={writing.frontmatter.title}
+					description={writing.frontmatter.description}
+					publishedOn={writing.frontmatter.publishedOn}
+					url={writing.url}
+					stats={stats}
+					client:idle
+				/>
+			)
+		})}
 	</main>
 	<main
 		class="px-4 global-max-width max-w-4xl w-full flex flex-col items-start justify-center gap-4 mb-4 rounded-xl"
