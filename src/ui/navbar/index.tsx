@@ -27,33 +27,34 @@ export const Navbar = () => {
 	let virRef: HTMLElement
 	let navRef: HTMLElement
 	createEffect(() => {
-		console.log(theme.navbar)
 		if (theme.navbar) {
-			navRef.classList.contains("hidden") &&
+			if (navRef.classList.contains("hidden")) {
 				navRef.classList.remove("hidden")
-			navRef.animate(
-				{
-					opacity: ["0", "1"],
-					transform: ["translateY(-100%)", "translateY(0)"],
-				},
-				{
-					duration: 300,
-					delay: 300,
-					easing: easeSquish2,
-					fill: "forwards",
-				}
-			)
-			virRef.animate(
-				{
-					height: ["112px"],
-				},
-				{
-					duration: 300,
-					delay: 300,
-					easing: ease1,
-					fill: "forwards",
-				}
-			)
+
+				navRef.animate(
+					{
+						opacity: ["0", "1"],
+						transform: ["translateY(-100%)", "translateY(0)"],
+					},
+					{
+						duration: 300,
+						delay: 300,
+						easing: easeSquish2,
+						fill: "forwards",
+					}
+				)
+				virRef.animate(
+					{
+						height: ["112px"],
+					},
+					{
+						duration: 300,
+						delay: 300,
+						easing: ease1,
+						fill: "forwards",
+					}
+				)
+			}
 		} else {
 			const anim = navRef.animate(
 				{
@@ -97,7 +98,7 @@ export const Navbar = () => {
 						theme.value === "light" ? "#dff1" : "#fff1"
 					},inset 17px -2px 72px 12px ${shadowColor()}`,
 				}}
-				class="flex bg-sky-400/0 transition-colors backdrop-blur-md backdrop-saturate-150 gap-x-4 items-center px-3 py-2 w-[96%] max-w-7xl fixed top-4 z-50 rounded-xl"
+				class="flex bg-sky-400/0 transition-colors backdrop-blur-md backdrop-saturate-150 gap-x-4 items-center px-3 py-2 w-[96%] global-max-width fixed top-4 z-50 rounded-xl"
 			>
 				<a href="/">
 					<Logo
@@ -109,7 +110,7 @@ export const Navbar = () => {
 					/>
 				</a>
 				<div class="w-full"></div>
-				<nav class="hidden sm:flex items-center gap-x-4">
+				<nav class="flex items-center gap-x-4">
 					<div class="flex items-center gap-x-3">
 						<ThemeButton size={28}>
 							<NavbarTooltip label="Twitter" />

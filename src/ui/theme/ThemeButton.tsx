@@ -5,7 +5,6 @@ import { theme, setTheme } from "./themeStore"
 
 export const ThemeButton = (props: { size?: number }) => {
 	/* SOUND */
-
 	const [play, { stop, setSoundEnabled }] = createSound(Sound, {
 		onload: () => console.log("LOADED"),
 		onend: () => console.log("ENDED"),
@@ -51,10 +50,7 @@ export const ThemeButton = (props: { size?: number }) => {
 	let buttonRef: HTMLButtonElement
 
 	onMount(() => {
-		reflectPreference()
-
 		setTheme("value", getColorPreference())
-
 		// window.onload = () => {
 		// 	reflectPreference()
 		// }
@@ -66,7 +62,6 @@ export const ThemeButton = (props: { size?: number }) => {
 				localStorage.setItem(storageKey, theme.value)
 				reflectPreference()
 			})
-
 		// buttonRef.addEventListener("pointerdown", changeTheme);
 		buttonRef.addEventListener("click", changeTheme)
 
@@ -81,8 +76,10 @@ export const ThemeButton = (props: { size?: number }) => {
 	})
 
 	createEffect(() => {
-		localStorage.setItem(storageKey, theme.value)
-		reflectPreference()
+		if (localStorage.getItem(storageKey) !== theme.value) {
+			localStorage.setItem(storageKey, theme.value)
+			reflectPreference()
+		}
 	})
 	return (
 		<button

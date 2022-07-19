@@ -7,6 +7,8 @@ import NotesCard from "@/ui/NotesCard"
 import { ProfileIcon, PenIcon, BoardIcon, NotebookIcon } from "@/assets/icons"
 const writings = await Astro.glob("./writings/*.md")
 const notes = await Astro.glob("./notes/*.md")
+
+const htmlContent = await notes[0].compiledContent()
 ---
 
 <Layout
