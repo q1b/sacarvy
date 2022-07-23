@@ -554,6 +554,156 @@ export const LinkIcon = (props: IconProps<ComponentProps<"svg">>) => {
     </span>
     )
 }
+import FluentClipboardCode24Filled from "~icons/fluent/clipboard-code-24-filled";
+import FluentClipboardCode24Regular from "~icons/fluent/clipboard-code-24-regular";
+
+export const ClipboardCodeIcon = (props: IconProps<ComponentProps<"svg">>) => {
+    const [local, others] = splitProps(props, [
+        "size",
+        "class",
+        "shape-rendering",
+        "basic",
+    ])
+    if (typeof local.basic === "undefined") {
+        local.basic = true
+    }
+    return (
+    <span class="relative">
+        <FluentClipboardCode24Regular
+            shape-rendering="geometricPrecision"
+            class={
+                local?.class
+                    ? local?.basic
+                        ? local.class +
+                          " group-focus-visible:opacity-0 group-hover:opacity-0 group-focus-visible:duration-300 group-focus-visible:scale-95 group-hover:scale-95 transition-[opacity,transform] duration-100 group-hover:duration-300"
+                        : local.class
+                    : local?.basic
+                    ? "w-5 h-5 group-focus-visible:opacity-0 group-hover:opacity-0 group-focus-visible:duration-300 group-focus-visible:scale-95 group-hover:scale-95 transition-[opacity,transform] duration-100 group-hover:duration-300"
+                    : "w-5 h-5"
+            }
+            width={`${local.size || 24}px`}
+            height={`${local.size || 24}px`}
+            {...others}
+        />
+            <FluentClipboardCode24Filled
+            shape-rendering="geometricPrecision"
+            class={
+                local?.class
+                    ? local?.basic
+                        ? local.class +
+                          " absolute opacity-0 group-focus-visible:opacity-100 group-hover:opacity-100 -translate-y-full scale-100 group-active:scale-90 group-focus-visible:scale-95 group-hover:scale-95 transition-[opacity,transform] duration-100"
+                        : local.class
+                    : local?.basic
+                    ? "w-5 h-5 absolute opacity-0 group-focus-visible:opacity-100 group-hover:opacity-100 -translate-y-full scale-100 group-active:scale-90 group-focus-visible:scale-95 group-hover:scale-95 transition-[opacity,transform] duration-100"
+                    : "w-5 h-5"
+            }
+            width={`${local.size || 24}px`}
+            height={`${local.size || 24}px`}
+            {...others}
+        />
+    </span>
+    )
+}
+import FluentCode24Filled from "~icons/fluent/code-24-filled";
+import FluentCode24Regular from "~icons/fluent/code-24-regular";
+
+export const CodeIcon = (props: IconProps<ComponentProps<"svg">>) => {
+    const [local, others] = splitProps(props, [
+        "size",
+        "class",
+        "shape-rendering",
+        "basic",
+    ])
+    if (typeof local.basic === "undefined") {
+        local.basic = true
+    }
+    return (
+    <span class="relative">
+        <FluentCode24Regular
+            shape-rendering="geometricPrecision"
+            class={
+                local?.class
+                    ? local?.basic
+                        ? local.class +
+                          " group-focus-visible:opacity-0 group-hover:opacity-0 group-focus-visible:duration-300 group-focus-visible:scale-95 group-hover:scale-95 transition-[opacity,transform] duration-100 group-hover:duration-300"
+                        : local.class
+                    : local?.basic
+                    ? "w-5 h-5 group-focus-visible:opacity-0 group-hover:opacity-0 group-focus-visible:duration-300 group-focus-visible:scale-95 group-hover:scale-95 transition-[opacity,transform] duration-100 group-hover:duration-300"
+                    : "w-5 h-5"
+            }
+            width={`${local.size || 24}px`}
+            height={`${local.size || 24}px`}
+            {...others}
+        />
+            <FluentCode24Filled
+            shape-rendering="geometricPrecision"
+            class={
+                local?.class
+                    ? local?.basic
+                        ? local.class +
+                          " absolute opacity-0 group-focus-visible:opacity-100 group-hover:opacity-100 -translate-y-full scale-100 group-active:scale-90 group-focus-visible:scale-95 group-hover:scale-95 transition-[opacity,transform] duration-100"
+                        : local.class
+                    : local?.basic
+                    ? "w-5 h-5 absolute opacity-0 group-focus-visible:opacity-100 group-hover:opacity-100 -translate-y-full scale-100 group-active:scale-90 group-focus-visible:scale-95 group-hover:scale-95 transition-[opacity,transform] duration-100"
+                    : "w-5 h-5"
+            }
+            width={`${local.size || 24}px`}
+            height={`${local.size || 24}px`}
+            {...others}
+        />
+    </span>
+    )
+}
+import FluentClipboardCheckmark24Filled from "~icons/fluent/clipboard-checkmark-24-filled";
+import FluentClipboardCheckmark24Regular from "~icons/fluent/clipboard-checkmark-24-regular";
+
+export const ClipboardCheckIcon = (props: IconProps<ComponentProps<"svg">>) => {
+    const [local, others] = splitProps(props, [
+        "size",
+        "class",
+        "shape-rendering",
+        "basic",
+    ])
+    if (typeof local.basic === "undefined") {
+        local.basic = true
+    }
+    return (
+    <span class="relative">
+        <FluentClipboardCheckmark24Regular
+            shape-rendering="geometricPrecision"
+            class={
+                local?.class
+                    ? local?.basic
+                        ? local.class +
+                          " group-focus-visible:opacity-0 group-hover:opacity-0 group-focus-visible:duration-300 group-focus-visible:scale-95 group-hover:scale-95 transition-[opacity,transform] duration-100 group-hover:duration-300"
+                        : local.class
+                    : local?.basic
+                    ? "w-5 h-5 group-focus-visible:opacity-0 group-hover:opacity-0 group-focus-visible:duration-300 group-focus-visible:scale-95 group-hover:scale-95 transition-[opacity,transform] duration-100 group-hover:duration-300"
+                    : "w-5 h-5"
+            }
+            width={`${local.size || 24}px`}
+            height={`${local.size || 24}px`}
+            {...others}
+        />
+            <FluentClipboardCheckmark24Filled
+            shape-rendering="geometricPrecision"
+            class={
+                local?.class
+                    ? local?.basic
+                        ? local.class +
+                          " absolute opacity-0 group-focus-visible:opacity-100 group-hover:opacity-100 -translate-y-full scale-100 group-active:scale-90 group-focus-visible:scale-95 group-hover:scale-95 transition-[opacity,transform] duration-100"
+                        : local.class
+                    : local?.basic
+                    ? "w-5 h-5 absolute opacity-0 group-focus-visible:opacity-100 group-hover:opacity-100 -translate-y-full scale-100 group-active:scale-90 group-focus-visible:scale-95 group-hover:scale-95 transition-[opacity,transform] duration-100"
+                    : "w-5 h-5"
+            }
+            width={`${local.size || 24}px`}
+            height={`${local.size || 24}px`}
+            {...others}
+        />
+    </span>
+    )
+}
 import FluentShare48Filled from "~icons/fluent/share-48-filled";
 import FluentShare48Regular from "~icons/fluent/share-48-regular";
 
