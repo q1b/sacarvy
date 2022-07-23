@@ -1,3 +1,6 @@
+# github config
+.github
+
 # build output
 dist/
 
