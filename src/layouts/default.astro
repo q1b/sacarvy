@@ -10,9 +10,8 @@ export interface Props {
 
 const { title, description, image } = Astro.props as Props
 
-const canonicalURL = new URL((), Astro.site)
+const canonicalURL = Astro?.canonicalURL
 
-// const canonicalURL = new URL(Astro.url, Astro.site)
 // console.dir(Astro,{depth:Infinity})
 ---
 
