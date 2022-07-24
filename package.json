@@ -15,7 +15,7 @@
     "@iconify/json": "^2.1.77",
     "@tailwindcss/typography": "^0.5.4",
     "@types/howler": "^2.2.7",
-    "astro": "^1.0.0-beta.70",
+    "astro": "^1.0.0-beta.73",
     "autoprefixer": "^10.4.7",
     "just-pascal-case": "^3.0.1",
     "postcss": "^8.4.14",

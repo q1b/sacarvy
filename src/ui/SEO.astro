@@ -8,7 +8,7 @@ export interface Props {
 	type?: "article" | "website"
 }
 
-const { canonicalURL = Astro.canonicalURL } = Astro.props
+const { canonicalURL = new URL(Astro.url.pathname, Astro.site) } = Astro.props
 
 const image = new URL(Astro.props?.image || "./social.png", Astro.site)
 
