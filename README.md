@@ -14,3 +14,7 @@
     Persuading btech(CS)
 </span> 
 </h4>
+
+<!-- ![image](https://user-images.githubusercontent.com/69889565/183045387-f8d5443c-9147-450a-b271-55d7c4677ecb.png) -->
+
+<!-- ![image](https://user-images.githubusercontent.com/69889565/183046163-4de88e2c-3c1a-454c-9f35-4e755cdca22e.png) -->
